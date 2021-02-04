@@ -7,8 +7,7 @@ words =
 
 lines =
   File.read!(filename)
-  |> String.split(~r{(\\n|[^\n'])+})
-  |> Enum.filter(fn x -> x != "" end)
+  |> String.split(~r{(\r\n|\n|\r)})
 
 characters =
     File.read!(filename)
